@@ -1,0 +1,279 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    color:white;
+}
+.header{
+    width:100%;
+    height:100vh;
+    /*gives transition of colors red, green, blue, transparency from top to bottom in background image*/
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("./images/header-image.png");
+    background-size: cover;/*ensures image covers the entire background*/
+    background-position: center;/*centers the image horizontally and vertically in container*/
+    position: relative;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 12%;
+}
+.logo{
+    width: 148px;
+}
+nav button{
+    border: 0;
+    outline: 0;/*it is given outside the border as a outline both are set to 0px*/
+    background: red;
+    color: white;
+    padding: 7px 20px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.language-btn{
+    display: inline-flex;/*makes elements of a container both inline and flex*/
+    align-items: center;
+    background: transparent;
+    border: 1px solid white;
+    padding: 7px 10px;
+}
+.language-btn img{
+    width: 9px;
+    margin-left: 10px;
+}
+.header-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*-50% means element moves 50% of its width to left and -50% means element moves 50% of its height to upward*/
+    transform: translate(-50%, -50%);/*centers element in x and y axis. first for x second for y*/
+    text-align: center;
+    margin-top: 100px;
+}
+.header-content h1{
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 600;
+    max-width: 650px;/*maximum width element can take used when building responsive sites.*/
+}
+.header-content h3{
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.email-signup{
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    background: white;
+    overflow: hidden;/*hides content that exceeds the dimensions of the element by default it is visible*/
+}
+.email-signup input{
+    /*means both flex grow and flex shrink are set to 1. It's shorthand for specifying how a flex item should distribute and handle extra(grow) or missing(shrink) space within a flex container.*/ 
+    flex: 1;
+    border: 1px solid white;
+    border-radius: 4px;
+    outline: 0;
+    margin-left: 20px;
+    font-size: 16px;
+}
+.email-signup button{
+    background: #db0001;
+    border: 0;
+    outline: 0;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 15px 30px;
+}
+/*css written for features*/
+.features{
+    padding: 50px 12%;
+    font-size: 22px;
+}
+.row{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;/*if elements exceeds flex container it gives them in next line. line by line dega elements ko*/
+    padding: 50px 0;
+}
+.text-col{
+    flex-basis: 50%;/*tells that how much space or width a flex item should take in a flex container*/
+    margin-bottom: 20px;
+}
+.img-col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+.img-col img{
+    display: block;
+    width: 90%;
+    margin: auto;/*only centers element horizontally not vertically*/
+}
+.features h2{
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/*faqs css*/
+.faq{
+    padding: 10px 12%; 
+    text-align: center;
+    font-size: 18px;
+}
+.faq h2{
+    font-weight: 500;
+    font-size: 40px;
+}
+.accordion{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750 px;
+}
+.accordion li{
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+}
+.accordion li label{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+label::after{
+    content: '+';
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+}
+input[type="radio"]{
+    display: none;
+}
+.accordion .content{
+    background: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+}
+/*(+) is adjacent sibling combinator. selects the immediately following sibling of the selector. styling done for content class words.*/
+.accordion input[type="radio"]:checked + label + .content{
+    max-height: 600px;
+    padding: 30px 20px;
+}
+.accordion input[type="radio"]:checked + label::after{
+    transform: rotate(135deg);
+}
+.faq .email-signup{
+    max-width: 600px;
+    margin: 20px auto 60px;/*top 20px, auto centers horizontally, bottom 60px*/
+}
+.faq small{
+    font-size: 13px;
+}
+/*footer css*/
+.footer{
+    padding: 50px 15% 10px;/*top 50px, horizontal padding is 15% of element width, bottom 10px*/
+    border-top: 6px solid #333;
+    color: #c6c3c3;
+}
+.footer h2{
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.footer .col{
+    flex-basis: 25%;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+.footer .col a{
+    display: block;
+    color: #c6c3c3;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.footer .row{
+    /*it means that the flex items will be aligned at the start of the cross axis. If the flex-direction is set to row, the cross axis is the vertical axis, and flex-start will align the items at the top of the container.*/
+    align-items: flex-start;
+    padding: 10px 0;
+}
+.footer .language-btn{
+    color: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.copyright-txt{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+/*media queries for small screen*/
+@media only screen and (max-width: 650px){
+    .logo{
+        width: 100px;
+    }
+    nav button{
+        padding: 5px 10px;
+    }
+    nav .language-btn{
+        padding: 4px 8px;
+    }
+    .header-content{
+        position: unset;/*sari given position hata do*/
+        transform: none;/*sari transform hata do*/
+    }
+    .header-content h1{
+        font-size: 30px;
+    }
+    .email-signup button{
+        font-size: 10px;
+        padding: 10px 15px;
+    }
+    .text-col, .img-col{
+        flex-basis: 100%;
+    }
+    .features h2{
+        font-size: 30px;
+    }
+    .features p{
+        font-size: 17px;
+    }
+    .row:nth-child(2), .row:nth-child(4){
+        flex-direction: column-reverse;/*will be displayed in a column, but in reverse order vertically for 2,4*/
+    }
+    .features .row{
+        padding: 10px 0;
+    }
+    .faq h2{
+        font-size: 20px;
+    }
+    .accordion .content{
+        font-size: 14px;
+    }
+    .accordion li label{
+        padding: 10px;
+        font-size: 14px;
+    }
+    label::after{
+        font-size: 22px;
+    }
+}
